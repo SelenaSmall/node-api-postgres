@@ -13,6 +13,18 @@ const getComments = (request, response) => {
   })
 }
 
+const createComment = (request, response) => {
+  const { text, author } = request.body
+
+  pool.query('INSERT INTO comments (text, author) VALUES ($1, $2)', [text, author], (error, results) => {
+    if (error) {
+      throw error
+    }
+    response.status(201).send(`Comment added with ID: ${results.insertId}`)
+})
+}
+
 module.exports = {
-  getComments
+  getComments,
+  createComment
 }

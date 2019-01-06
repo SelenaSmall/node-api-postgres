@@ -16,6 +16,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/comments', db.getComments)
+app.post('/comments', db.createComment)
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
