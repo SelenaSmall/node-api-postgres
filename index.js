@@ -16,6 +16,7 @@ app.get('/', (request, response) => {
 })
 
 app.get('/comments', db.getComments)
+app.get('/comments/:id', db.getCommentById)
 app.post('/comments', db.createComment)
 
 app.listen(port, () => {
