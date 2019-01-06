@@ -35,6 +35,22 @@ const createComment = (request, response) => {
   })
 }
 
+const updateComment = (request, response) => {
+  const id = parseInt(request.params.id)
+  const { text, author } = request.body
+
+  pool.query(
+    'UPDATE comments SET text = $1, author = $2 WHERE id = $3',
+    [text, author, id],
+    (error, results) => {
+      if (error) {
+        throw error
+      }
+      response.status(200).send(`User modified with ID: ${id}`)
+    }
+  )
+}
+
 module.exports = {
   getComments,
   getCommentById,
