@@ -1,7 +1,9 @@
 const Pool = require('pg').Pool
 const pool = new Pool({
-  host: 'localhost',
-  database: 'node-api-postgres',
+  connectionString: process.env.DATABASE_URL,
+  ssl: true,
+  host: process.env.PORT || 'localhost',
+  database: process.env.DATABASE_URL || 'node-api-postgres'
 })
 
 const getComments = (request, response) => {
