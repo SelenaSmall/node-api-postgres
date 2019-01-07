@@ -8,7 +8,7 @@ node index.js
 cd client && REACT_APP_API_BASE_URL='http://localhost:5000' PORT=5001 npm start
 ```
 
---> TODO Fix script `npm run start` to us `Procfile.dev` for running FE and BE in one command
+--> TODO Fix script `npm run start` to use `Procfile.dev` for running FE and BE in one command
 
 ---
 
