@@ -37,3 +37,10 @@ git push heroku master
 * Log in to Heroku dashboard and run command in the console to create database tables 
 
 --> TODO Make this deploy automatic
+
+##### Additional Notes
+
+This app runs differently in Dev and in Prod
+
+ - Dev: frontend and backend are served on different ports and requires CORS to be enabled
+ - Prod: frontend and backend run together on the same server
