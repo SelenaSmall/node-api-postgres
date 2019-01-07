@@ -17,7 +17,8 @@ class Comments extends Component {
   render() {
     const comments = this.state.comments.map( (comment) =>
       <div className="images-container-single" key={comment.id}>
-        <p>Comment: { comment.text }</p>
+        <label><strong>Comment: </strong>{ comment.text }</label>
+        <span> - { comment.author }</span>
       </div>
     );
     return (
