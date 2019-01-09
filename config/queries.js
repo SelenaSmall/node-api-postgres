@@ -27,7 +27,7 @@ const getCommentById = (request, response) => {
 };
 
 const createComment = (request, response) => {
-  const { text, author } = request.body
+  const { text, author } = request.body;
 
   pool.query('INSERT INTO comments(text, author) VALUES ($1, $2)', [text, author], (error, result) => {
     if (error) {
@@ -38,8 +38,8 @@ const createComment = (request, response) => {
 };
 
 const updateComment = (request, response) => {
-  const id = parseInt(request.params.id)
-  const { text, author } = request.body
+  const id = parseInt(request.params.id);
+  const { text, author } = request.body;
 
   pool.query(
     'UPDATE comments SET text = $1, author = $2 WHERE id = $3',
@@ -54,7 +54,7 @@ const updateComment = (request, response) => {
 };
 
 const deleteComment = (request, response) => {
-  const id = parseInt(request.params.id)
+  const id = parseInt(request.params.id);
 
   pool.query('DELETE FROM comments WHERE id = $1', [id], (error, results) => {
     if (error) {
