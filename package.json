@@ -18,6 +18,6 @@
   "description": "",
   "dependencies": {
     "express": "^4.16.4",
-    "make-runnable": "^1.3.6",
+    "make-runnable": "^1.3.6"
   }
 }
