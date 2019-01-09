@@ -1,10 +1,10 @@
-const Pool = require('pg').Pool
+const Pool = require('pg').Pool;
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL || '',
   ssl: process.env.SSL || false,
   host: process.env.PORT || 'localhost',
   database: process.env.DATABASE_URL || 'node-api-postgres'
-})
+});
 
 const getComments = (request, response) => {
   pool.query('SELECT * FROM comments ORDER BY id ASC', (error, results) => {
@@ -13,7 +13,7 @@ const getComments = (request, response) => {
     }
     response.status(200).json(results.rows)
   })
-}
+};
 
 const getCommentById = (request, response) => {
   const id = parseInt(request.params.id)
@@ -24,7 +24,7 @@ const getCommentById = (request, response) => {
     }
     response.status(200).json(results.rows)
   })
-}
+};
 
 const createComment = (request, response) => {
   const { text, author } = request.body
@@ -35,7 +35,7 @@ const createComment = (request, response) => {
     }
     response.status(201).send(`Comment added with ID: ${result.insertId}`)
   })
-}
+};
 
 const updateComment = (request, response) => {
   const id = parseInt(request.params.id)
@@ -51,7 +51,7 @@ const updateComment = (request, response) => {
       response.status(200).send(`User modified with ID: ${id}`)
     }
   )
-}
+};
 
 const deleteComment = (request, response) => {
   const id = parseInt(request.params.id)
@@ -62,7 +62,7 @@ const deleteComment = (request, response) => {
     }
     response.status(200).send(`User deleted with ID: ${id}`)
   })
-}
+};
 
 module.exports = {
   getComments,
@@ -70,4 +70,4 @@ module.exports = {
   createComment,
   updateComment,
   deleteComment,
-}
+};
