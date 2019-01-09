@@ -1,7 +1,7 @@
 const Pool = require('pg').Pool
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL, // for Production only
-  ssl: true, // for Production only
+  connectionString: process.env.DATABASE_URL || '',
+  ssl: process.env.SSL || false,
   host: process.env.PORT || 'localhost',
   database: process.env.DATABASE_URL || 'node-api-postgres'
 })
