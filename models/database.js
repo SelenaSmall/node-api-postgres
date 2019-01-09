@@ -1,6 +1,3 @@
-// Run this file to create and update tables in your database
-// $ node models/database.js buildTables
-
 const pg = require('pg');
 const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/node-api-postgres';
 const client = new pg.Client(connectionString);

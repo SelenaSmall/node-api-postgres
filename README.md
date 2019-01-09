@@ -19,7 +19,7 @@ createdb node-api-postgres
 
 #### Run database.js script to create database tables
 ```
-node models/database.js
+node models/database.js buildTables
 ```
 
 ### Deploy API to Heroku
