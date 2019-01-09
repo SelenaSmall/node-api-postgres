@@ -1,2 +1,2 @@
 web: cd client && REACT_APP_API_BASE_URL='http://localhost:5000' PORT=5001 npm start
-api: PORT=5000 && node index.js
+api: PORT=5000 && node server.js

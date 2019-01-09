@@ -1,7 +1,7 @@
 const Pool = require('pg').Pool
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
+  connectionString: process.env.DATABASE_URL, // for Production only
+  ssl: true, // for Production only
   host: process.env.PORT || 'localhost',
   database: process.env.DATABASE_URL || 'node-api-postgres'
 })
@@ -61,7 +61,7 @@ const deleteComment = (request, response) => {
       throw error
     }
     response.status(200).send(`User deleted with ID: ${id}`)
-})
+  })
 }
 
 module.exports = {
@@ -69,5 +69,5 @@ module.exports = {
   getCommentById,
   createComment,
   updateComment,
-  deleteComment
+  deleteComment,
 }

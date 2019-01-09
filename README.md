@@ -1,6 +1,6 @@
 #### Run API
 ```
-node index.js
+node server.js
 ```
 
 #### Run React APP
@@ -17,9 +17,9 @@ cd client && REACT_APP_API_BASE_URL='http://localhost:5000' PORT=5001 npm start
 createdb node-api-postgres
 ```
 
-#### Run database.js script to create database tables
+#### Run database.js script to create and update databases tables
 ```
-node models/database.js buildTables
+node config/database.js buildTables
 ```
 
 ### Deploy API to Heroku
@@ -27,7 +27,7 @@ node models/database.js buildTables
 git push heroku master
 ```
 
---> TODO Deploy script that runs `node models/database.js` so I don't have to run it every time I make a change to the database
+--> TODO Deploy script that runs `node config/database.js` so I don't have to run it every time I make a change to the database
 
 ##### Configuring Deploy to Heroku
 
