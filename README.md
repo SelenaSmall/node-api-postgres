@@ -40,11 +40,9 @@ git push heroku master
 
 ##### Additional Notes
 
-This app runs differently in Dev and in Prod
+Server.js is serving both the React app and the API
 
- - Dev: frontend and backend are served on different ports and requires CORS to be enabled
- - Prod: frontend and backend run together on the same server
- 
+CORS was enabled to allow the frontend and backend to run on different ports - it's no longer necessary, however it may be used in the future
 
 ### Create the first Admin User directly in the database by running:
 ```
