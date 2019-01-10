@@ -28,6 +28,8 @@ app.post('/comments', db.createComment);
 app.put('/comments/:id', db.updateComment);
 app.delete('/comments/:id', db.deleteComment);
 
+app.get('/users', db.getUsers);
+
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 app.get('*', (req, res) => {
