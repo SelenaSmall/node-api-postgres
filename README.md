@@ -19,7 +19,7 @@ createdb node-api-postgres
 
 #### Run database.js script to create and update databases tables
 ```
-node config/database.js buildTables
+node config/database.js
 ```
 
 ### Deploy API to Heroku
@@ -44,3 +44,9 @@ This app runs differently in Dev and in Prod
 
  - Dev: frontend and backend are served on different ports and requires CORS to be enabled
  - Prod: frontend and backend run together on the same server
+ 
+
+### Create the first Admin User directly in the database by running:
+```
+heroku pg:psql --app app_name --command "INSERT INTO users(email, password, is_admin) VALUES ('user@email.com', 'password', TRUE)"
+```
